@@ -42,7 +42,9 @@ It never changes code blocks, inline code, links Claude already wrote, bare URLs
 
 ## How it works
 
-The mod hooks `session.append`:
+The mod hooks one event, `session.append`, which Claude Code raises for every row it adds to a conversation. Of those rows it changes only one kind: the text of Claude's own replies in the main conversation, where it adds markdown links. It reads tool results without changing them, and it leaves every other row alone, including your prompts, tool calls, subagent replies and rows other mods or code append. It makes no network requests and runs no commands.
+
+In detail:
 
 - **Tool results** (`door: tool-result`): it reads each result for GitHub pull request and issue URLs, and parses JSON for objects that carry a name (`name`, `title`, `displayName`, `filename`, ...) beside a web URL (`webViewLink`, `html_url`, `url`, `link`, ...) or an id it knows how to turn into one.
 - **Replies** (`door: response`): it rewrites the text blocks of each main-conversation reply with markdown links before the reply is saved.
