@@ -1,0 +1,7 @@
+{
+  "name": "reply-links",
+  "version": "0.1.0",
+  "description": "Turns PRs, issues, Google Drive files, ElevenLabs agents and other things Claude names in a reply into clickable links. Deterministic: no model calls.",
+  "author": { "name": "orgonag" },
+  "license": "MIT"
+}

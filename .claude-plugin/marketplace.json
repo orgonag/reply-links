@@ -1,0 +1,5 @@
+{
+  "name": "reply-links",
+  "owner": { "name": "orgonag" },
+  "plugins": [{ "name": "reply-links", "source": "./" }]
+}
